@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 
 namespace ZebraGraphicsConverter
 {
@@ -176,20 +177,20 @@ namespace ZebraGraphicsConverter
         bool CheckZplCode()
         {
             bool result = !string.IsNullOrEmpty(ZPL_ImageCode);
-            System.Collections.ArrayList results = new System.Collections.ArrayList();
             if (result)
             {
+                System.Collections.ArrayList results = new System.Collections.ArrayList();
                 if (ZPL_ImageCode.Split(',').Length == 5)
                 {
-                    if (!ZPL_ImageCode.Split(',')[0].Equals("^GFA")) results.Add(false);
+                    results.Add(ZPL_ImageCode.Split(',')[0].Equals("^GFA"));
                     int x;
-                    if (!int.TryParse(ZPL_ImageCode.Split(',')[1], out x)) results.Add(false);
-                    if (!int.TryParse(ZPL_ImageCode.Split(',')[2], out x)) results.Add(false);
-                    if (!int.TryParse(ZPL_ImageCode.Split(',')[3], out x)) results.Add(false);
+                    results.Add(int.TryParse(ZPL_ImageCode.Split(',')[1], out x));
+                    results.Add(int.TryParse(ZPL_ImageCode.Split(',')[2], out x));
+                    results.Add(int.TryParse(ZPL_ImageCode.Split(',')[3], out x));
                 } else 
                     results.Add(false);
 
-                result = results.Count == 0;
+                result = !results.ToArray().Any(x => (bool)x == false);
             }
             return result;
         }
