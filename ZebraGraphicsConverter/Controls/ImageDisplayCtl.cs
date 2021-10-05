@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ZebraGraphicsConverter.Controls
@@ -72,11 +66,17 @@ namespace ZebraGraphicsConverter.Controls
 
         void ToZpl()
         {
+            if(pictureBox1.Image == default)
+            {
+                ZPL_ImageCode = "Please open image first";
+                pictureBox1.Image = Properties.Resources.error;
+                return;
+            }
             Converter converter;
             converter = new Converter(pictureBox1.Image);
-            converter.ToGrayscale();
-            converter.Treshold();
-            pictureBox1.Image = converter.Picture;
+            converter.ToGrayscale();//first, convert to gray
+            converter.Treshold(); //second, convert to 1bpp
+            pictureBox1.Image = converter.Picture; //show picture
             if (converter.Convert(Converter.ConversionEnum.ToZpl))
             {
                 ZPL_ImageCode = converter.ZPL_ImageCode;

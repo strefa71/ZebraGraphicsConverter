@@ -197,7 +197,7 @@ namespace ZebraGraphicsConverter
 
         public void ToGrayscale()
         {
-            if (Picture.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+            if (Picture?.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
             {
                 Picture = AForge.Imaging.Image.Clone((Bitmap)Picture, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 if (!AForge.Imaging.Image.IsGrayscale((Bitmap)Picture))
@@ -256,7 +256,6 @@ namespace ZebraGraphicsConverter
                 return;
             AForge.Imaging.Filters.FloydSteinbergDithering filter = new AForge.Imaging.Filters.FloydSteinbergDithering();
             Picture = filter.Apply((Bitmap)Picture);
-            //Expand();
         }
 
         /// <summary>

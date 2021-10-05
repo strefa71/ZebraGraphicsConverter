@@ -120,7 +120,6 @@ namespace ZebraGraphicsConverter
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = global::ZebraGraphicsConverter.Properties.Resources.folder_picture;
             resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.Name = "toolStripButton1";
@@ -128,7 +127,6 @@ namespace ZebraGraphicsConverter
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = global::ZebraGraphicsConverter.Properties.Resources.convert_color_to_gray;
             resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.Name = "toolStripButton2";
@@ -136,7 +134,6 @@ namespace ZebraGraphicsConverter
             // 
             // toolStripButton3
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton3.Image = global::ZebraGraphicsConverter.Properties.Resources.Clipboard_Paste_icon;
             resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.Name = "toolStripButton3";
@@ -149,7 +146,6 @@ namespace ZebraGraphicsConverter
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton4.Image = global::ZebraGraphicsConverter.Properties.Resources.shape_rotate_clockwise;
             resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
             this.toolStripButton4.Name = "toolStripButton4";
